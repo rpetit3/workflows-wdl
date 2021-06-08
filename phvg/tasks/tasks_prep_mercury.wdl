@@ -9,15 +9,15 @@ task mercury_json {
         python3 << CODE
         import json
         with open('~{metadata}', 'rt') as fh:
-        out = json.load(fh)
-        for k,v in out.items():
-            with open(k, 'wt') as k_fh:
-                k_fh.write(f'{v}\n')
+            out = json.load(fh)
+            for k,v in out.items():
+                with open(k, 'wt') as k_fh:
+                    k_fh.write(f'{v}\n')
         CODE
     >>>
 
     output {
-        String sample_name            = read_string("sample_name")
+        String samplename             = read_string("sample_name")
         String platform               = read_string("platform")
         String submission_id          = read_string("submission_id")
         String collection_date        = read_string("collection_date")
@@ -25,7 +25,7 @@ task mercury_json {
         String Authors                = read_string("Authors")
         String bioproject_accession   = read_string("bioproject_accession")
         String iso_state              = read_string("iso_state")
-        String iso_country            = read_string("VERSION")
+        String iso_country            = read_string("iso_country")
         String iso_continent          = read_string("iso_continent")
         String collecting_lab         = read_string("collecting_lab")
         String collecting_lab_address = read_string("collecting_lab_address")
@@ -33,7 +33,7 @@ task mercury_json {
         String subLab_address         = read_string("subLab_address")
         String gender                 = read_string("gender")
         String patient_age            = read_string("patient_age")
-  }
+    }
 
     runtime {
         docker: "python:slim"
