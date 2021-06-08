@@ -77,10 +77,10 @@ workflow phvg {
 
     output {
         # Titan outputs
-        String? seq_platform               = titan.seq_platform
-        File?   dehosted_reads             = titan.dehosted_reads
-        Int?    fastqc_raw                 = titan.fastqc_raw
-        Int?    fastqc_clean               = titan.fastqc_clean
+        String seq_platform                = titan.seq_platform
+        File   dehosted_reads              = titan.dehosted_reads
+        Int    fastqc_raw                  = titan.fastqc_raw
+        Int    fastqc_clean                = titan.fastqc_clean
 
         String kraken_version              = titan.kraken_version
         Float  kraken_human                = titan.kraken_human
